@@ -14,6 +14,7 @@ function App() {
                     <Route index element={<Home />} />
                     <Route path="contact" element={<Contact name="Kristina" />} />
                     <Route path="news/:id" element={<News />} />
+                    <Route path="uudised" element={<Home />} />
                     <Route path="*" element={<h1>Not Found</h1>} />
                 </Route>
             </Routes>
