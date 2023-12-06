@@ -1,15 +1,54 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { client } from '../App';
 
 const News = () => {
-    const location = useLocation();
-    const uudis = location.state;
+    const { newsId } = useParams();
+    const [uudis, setUudis] = useState(null);
+
+    useEffect(() => {
+        client.getEntry(newsId).then((response) => {
+            console.log(response);
+            setUudis(response);
+        });
+    }, [newsId]);
+
+    if (!uudis) {
+        return <div>Unable to retrieve news with ID {newsId}</div>;
+    }
+
+    const createdAt = new Date(uudis.sys.createdAt).toLocaleString('et-EE', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+    });
+    //    console.log(uudis); 
 
     return (
-        <div className="news-detail">
-            <h1>{uudis && uudis.pealkiri}</h1>
-            <img src={uudis && uudis.pilt} alt={uudis && uudis.pealkiri} />
-            <p>{uudis && uudis.sisu}</p>
+        <div className="news-container">
+            <div className="news-header">
+                <h1>{uudis.fields.title}</h1>
+            </div>
+            <div className="news-details">
+                <div className="news-meta body">
+                    <p>Author:
+                        <br />{uudis.fields.author}</p>
+                    <p>Published:<br /> {createdAt}</p>
+                </div>
+                <div className="news-content body">
+                    {uudis.fields.image && (
+                        <img
+                            src={uudis.fields.image.fields.file.url}
+                            alt={uudis.fields.image.fields.title}
+                            className="news-image"
+                        />
+                    )}
+                    <p>{uudis.fields.body}</p>
+                </div>
+            </div>
         </div>
     );
 };

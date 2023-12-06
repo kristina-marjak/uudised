@@ -1,83 +1,150 @@
+body {
+  background-color: #282c34;
+}
+
+.header {
+  color: red;
+}
+
+h1 {
+  color: lightblue;
+}
+
+div.body {
+  color: white;
+}
 
 .uudiste-konteiner {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.uudised-list {
-  display: grid;
-  gap: 20px;
+.uudiste-rivi {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin-bottom: 20px;
 }
 
-.uudis-card {
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 8px;
-  overflow: hidden;
+.uudis-kast {
+  flex: 1;
+  cursor: pointer;
+  margin: 0 10px;
+  text-align: center;
 }
 
-.uudis-card img {
+.uudis-kast h2 {
+  margin-top: 10px;
+}
+
+.uudis-kast img {
   width: 100%;
-  height: 400px;
+  height: 300px;
   object-fit: cover;
 }
 
-.uudis-card h2 {
-  font-size: 1.5em;
-  margin-top: 10px;
-}
-
-.uudis-card p {
-  margin-top: 10px;
-}
-
-.uudis-card a {
-  display: block;
-  margin-top: 10px;
-  color: #007BFF;
-}
-
-.news-detail {
-  max-width: 600px;
+.news-container {
+  max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }
 
-.news-detail img {
+.news-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.news-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.news-meta {
+  width: 25%;
+  padding-right: 20px;
+}
+
+.news-content {
+  width: 75%;
+}
+
+.news-image {
   max-width: 100%;
   height: auto;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
-.news-detail h1 {
-  font-size: 24px;
-  margin-bottom: 15px;
+.nav-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
 }
 
-.news-detail p {
-  font-size: 16px;
-  line-height: 1.6;
+nav ul {
+  padding-top: 30px;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+
 }
 
-a {
-  color: #333; 
-  text-decoration: none; 
-  font-weight: bold; 
+nav li {
+  margin: 0;
 }
 
-a:hover {
-  color: #555; 
+nav a {
+
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 18px;
+  /* Muuda teksti suurus vastavalt soovile */
+  font-weight: bold;
+  /* Muuda teksti kaalu vastavalt soovile */
+  padding: 10px 15px;
+  /* Lisa polstri mõlema külje ja ülemise ja alumise jaoks */
+  border-radius: 5px;
+  /* Lisa nurga ümardamiseks äärist */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Üleminek taustavärvi ja tekstivärvi muutumisele */
+}
+
+nav a:hover {
+  background-color: lightblue;
+  /* Muuda hover efekti taustavärv vastavalt soovile */
+  color: #282c34;
+  /* Muuda hover efekti tekstivärv vastavalt soovile */
+}
+
+/* Contact.css */
+.page-container {
+  display: flex;
+  justify-content: center;
 }
 
 .contact-container {
-  max-width: 600px;
-  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  text-align: left;
+  width: 50%;
+  /* Muuda vastavalt soovile, et saavutada soovitud laius */
+}
+
+.column {
+  flex: 1;
+  text-align: center;
+  margin: 10px;
+}
+
+.column h2 {
+  color: lightblue;
+}
+
+.column p {
+  margin: 10px 0;
+  color: white;
 }

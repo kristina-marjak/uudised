@@ -2,8 +2,8 @@ import { Outlet, Link } from "react-router-dom";
 
 const Layout = () => {
     return (
-        <div className="App">
-            <header className="App-header">
+        <div>
+            <header>
                 <nav>
                     <ul>
                         <li>
@@ -17,7 +17,7 @@ const Layout = () => {
 
                 <Outlet />
             </header>
-        </div>
+        </div >
     )
 };
 
