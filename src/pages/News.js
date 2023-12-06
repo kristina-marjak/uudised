@@ -11,7 +11,7 @@ const News = () => {
             console.log(response);
             setUudis(response);
         });
-    }, [newsId]);
+    }, []);
 
     if (!uudis) {
         return <div>Unable to retrieve news with ID {newsId}</div>;
@@ -25,7 +25,7 @@ const News = () => {
         minute: 'numeric',
         second: 'numeric',
     });
-    //    console.log(uudis); 
+    // console.log(uudis); 
 
     return (
         <div className="news-container">
