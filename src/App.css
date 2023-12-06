@@ -2,10 +2,6 @@ body {
   background-color: #282c34;
 }
 
-.header {
-  color: red;
-}
-
 h1 {
   color: lightblue;
 }
@@ -14,35 +10,38 @@ div.body {
   color: white;
 }
 
-.uudiste-konteiner {
+/*News main*/
+
+.main-news-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.uudiste-rivi {
+.main-news-column {
   display: flex;
-  justify-content: space-between;
-  width: 70%;
+  width: 60%;
   margin-bottom: 20px;
 }
 
-.uudis-kast {
+.main-news-column .main-news-box {
   flex: 1;
   cursor: pointer;
   margin: 0 10px;
   text-align: center;
 }
 
-.uudis-kast h2 {
+.main-news-box h2 {
   margin-top: 10px;
 }
 
-.uudis-kast img {
+.main-news-box img {
   width: 100%;
   height: 300px;
   object-fit: cover;
 }
+
+/*News detailed*/
 
 .news-container {
   max-width: 800px;
@@ -76,6 +75,8 @@ div.body {
   margin-bottom: 20px;
 }
 
+/*Navigatin*/
+
 .nav-header {
   display: flex;
   justify-content: center;
@@ -88,7 +89,6 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
-
 }
 
 nav li {
@@ -96,30 +96,23 @@ nav li {
 }
 
 nav a {
-
   text-decoration: none;
   color: white;
   text-transform: uppercase;
   font-size: 18px;
-  /* Muuda teksti suurus vastavalt soovile */
   font-weight: bold;
-  /* Muuda teksti kaalu vastavalt soovile */
   padding: 10px 15px;
-  /* Lisa polstri mõlema külje ja ülemise ja alumise jaoks */
   border-radius: 5px;
-  /* Lisa nurga ümardamiseks äärist */
   transition: background-color 0.3s ease, color 0.3s ease;
-  /* Üleminek taustavärvi ja tekstivärvi muutumisele */
 }
 
 nav a:hover {
   background-color: lightblue;
-  /* Muuda hover efekti taustavärv vastavalt soovile */
   color: #282c34;
-  /* Muuda hover efekti tekstivärv vastavalt soovile */
 }
 
-/* Contact.css */
+/* Contact */
+
 .page-container {
   display: flex;
   justify-content: center;
@@ -131,7 +124,6 @@ nav a:hover {
   justify-content: center;
   padding: 20px;
   width: 50%;
-  /* Muuda vastavalt soovile, et saavutada soovitud laius */
 }
 
 .column {

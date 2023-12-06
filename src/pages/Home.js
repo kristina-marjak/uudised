@@ -13,14 +13,14 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="uudiste-konteiner">
+        <div className="main-news-container">
             <h1>GOOD NEWS</h1>
 
             {/* Olulisemad uudised */}
-            <div className="uudiste-rivi">
+            <div className="main-news-column">
                 {uudised.slice(0, 2).map((uudis) => (
                     <StyledLink key={uudis.fields.id} to={`/news/${uudis.sys.id}`}>
-                        <div className="uudis-kast">
+                        <div className="main-news-box">
                             <img
                                 src={uudis.fields.image.fields.file.url}
                                 alt={uudis.fields.image.fields.title}
@@ -32,10 +32,10 @@ const Home = () => {
             </div>
 
             {/* Mitte nii olulised uudised */}
-            <div className="uudiste-rivi">
+            <div className="main-news-column">
                 {uudised.slice(2, 6).map((uudis) => (
                     <StyledLink key={uudis.fields.id} to={`/news/${uudis.sys.id}`}>
-                        <div className="uudis-kast">
+                        <div className="main-news-box">
                             <img
                                 src={uudis.fields.image.fields.file.url}
                                 alt={uudis.fields.image.fields.title}
