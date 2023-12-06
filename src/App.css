@@ -67,6 +67,7 @@ div.body {
 
 .news-content {
   width: 75%;
+  white-space: pre-wrap;
 }
 
 .news-image {
